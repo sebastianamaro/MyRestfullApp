@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset=utf-8 />
+        <title>Insert row in a table</title>
+        <script>
+                function insert_Row(){
+                    var tableRef = document.getElementById('sampleTable');
+
+                    var rowNumber = tableRef.rows.length;
+                    var newRow   = tableRef.insertRow(rowNumber);
+                    var cell1  = newRow.insertCell(0);
+
+                    var newTextCell1  = document.createTextNode('Row'+ (rowNumber+1) + ' cell1');
+                    cell1.appendChild(newTextCell1);
+
+                    var cell2  = newRow.insertCell(1);
+
+                    var newTextCell2  = document.createTextNode('Row'+ (rowNumber+1) + ' cell2');
+                    cell2.appendChild(newTextCell2);
+                }
+        </script>
+    </head>
+    <body>
+        <table id="sampleTable" border="1">
+            <tr>
+                <td>Row1 cell1</td>
+                <td>Row1 cell2</td>
+            </tr>
+            <tr>
+                <td>Row2 cell1</td>
+                <td>Row2 cell2</td>
+            </tr>
+        </table>
+        <br>
+        <input type="button" onclick="insert_Row()" value="Insert row"> 
+    </body>
+</html>
+
